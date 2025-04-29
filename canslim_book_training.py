@@ -86,61 +86,7 @@ def login_block():
 if not login_block():
     st.stop()
 
-# PDF_PATH = "D:/Chat Gpt/CANSLIM/How-to-Make-Money-in-Stocks-PDF-Book.pdf"
-# CHAPTERS_TO_PROCESS = {
-#     1: {"start": 14, "end": 64, "title": "The Greatest Stock-Picking Secrets"},
-#     2: {"start": 65, "end": 133, "title": "How to Read Charts Like a Pro"},
-#     3: {"start": 134, "end": 142, "title": "C = Current Big or Accelerating Quarterly Earnings and Sales"},
-#     4: {"start": 143, "end": 153, "title": "A = Annual Earnings Increases: Look for Big Growth"},
-#     5: {"start": 154, "end": 166, "title": "N = New Companies, New Products, New Management"},
-# }
 
-# CHUNK_SIZE = 500
-# CHUNK_OVERLAP = 50
-# EMBED_MODEL = "text-embedding-3-small"
-
-# # ─── Open book ───────────────────────────────
-# doc = fitz.open(PDF_PATH)
-# enc = tiktoken.encoding_for_model(EMBED_MODEL)
-
-# # ─── Helper: Chunker ──────────────────────────
-# def chunk_tokens(tokens, size=CHUNK_SIZE, overlap=CHUNK_OVERLAP):
-#     step = size - overlap
-#     for i in range(0, len(tokens), step):
-#         yield tokens[i: i + size]
-
-# # ─── Storage ──────────────────────────────────
-# chapter_embeddings = {}
-
-# # ─── Process Each Chapter ─────────────────────
-# for chapter_no, meta in CHAPTERS_TO_PROCESS.items():
-#     full_text = ""
-#     for pg in range(meta["start"], meta["end"] + 1):
-#         full_text += doc.load_page(pg).get_text("text") + "\n"
-#     full_text = full_text.strip()
-    
-#     tokens = enc.encode(full_text)
-#     chunks = [enc.decode(window) for window in chunk_tokens(tokens)]
-    
-#     # Embed chunks
-#     embedded_chunks = []
-#     batch_size = 50
-#     for i in range(0, len(chunks), batch_size):
-#         batch = chunks[i:i+batch_size]
-#         response = client.embeddings.create(
-#         input=batch,
-#         model="text-embedding-3-small"
-#             )
-#         embedded_chunks.extend(response.data)
-    
-#     # Save embeddings
-#     chapter_embeddings[chapter_no] = {
-#         "title": meta["title"],
-#         "chunks": chunks,
-#         "embeddings": [e.embedding for e in embedded_chunks]
-#     }
-    
-#     print(f"✅ Chapter {chapter_no}: {meta['title']} processed with {len(chunks)} chunks.")
 
 
 def get_embedding(text):
@@ -376,7 +322,7 @@ def answer_user_question(user_question: str,model_choice):
     #final_answer=response.choices[0].message.content.strip()
     return response
 
-st.set_page_config(page_title="CANSLIM Trading Mentor", page_icon="📚")
+st.set_page_config(page_title="CANSLIM Trading Mentor", page_icon="📚",layout="wide" )
 
 st.title("📚 CANSLIM Trading Mentor")
 st.subheader("Ask anything based on 'How to Make Money in Stocks' 📈")

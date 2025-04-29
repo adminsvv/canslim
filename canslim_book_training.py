@@ -1,5 +1,5 @@
 import fitz
-import yfinance as yf
+
 import pandas as pd
 from datetime import datetime, timedelta,date,time as dt_time
 from datetime import datetime, time
@@ -9,9 +9,7 @@ pd.options.display.float_format = '{:.2f}'.format
 import time
 from IPython.display import clear_output
 from pandas.io.formats.style import Styler
-import warnings
-import boto3
-from io import BytesIO
+
 from sklearn.metrics.pairwise import cosine_similarity
 import streamlit as st
 
@@ -19,13 +17,12 @@ import streamlit as st
 warnings.filterwarnings("ignore")
 
 
-from pymongo import MongoClient
 import re
 from openai import OpenAI
 import openai
 import json
 import fitz
-import tiktoken
+
 import openai
 
 import os

@@ -1,7 +1,7 @@
 openai==1.61.1
 pandas==2.2.3
 streamlit==1.41.1
-PyMuPDF==1.25.5
+
 ﻿altair==4.2.2
 appdirs==1.4.4
 attrs==23.2.0

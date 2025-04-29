@@ -1,4 +1,4 @@
-import fitz
+
 
 import pandas as pd
 from datetime import datetime, timedelta,date,time as dt_time

@@ -55,7 +55,7 @@ CHAPTERS_TO_PROCESS = {
     15: {"start": 369, "end": 390, "title": "Picking the Best Market Themes, Sectors, and Industry Groups"},
 }
 
-with open("D:/Chat Gpt/CANSLIM/chapter_embeddings.pkl", "rb") as f:
+with open("CANSLIM/chapter_embeddings.pkl", "rb") as f:
     chapter_embeddings = pickle.load(f)
 
 CREDENTIALS = {

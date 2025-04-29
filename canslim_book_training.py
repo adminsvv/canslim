@@ -7,7 +7,7 @@ import numpy as np
 import os
 pd.options.display.float_format = '{:.2f}'.format
 import time
-from IPython.display import clear_output
+
 from pandas.io.formats.style import Styler
 
 from sklearn.metrics.pairwise import cosine_similarity

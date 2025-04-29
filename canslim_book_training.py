@@ -14,14 +14,13 @@ from sklearn.metrics.pairwise import cosine_similarity
 import streamlit as st
 
 # Suppress all warnings
-warnings.filterwarnings("ignore")
 
 
-import re
+
+
 from openai import OpenAI
 import openai
-import json
-import fitz
+
 
 import openai
 
